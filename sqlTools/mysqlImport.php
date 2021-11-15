@@ -25,7 +25,7 @@ echo "********** DataBase Auto Import Start **********\n" ;
                         // 取得 Database 清單列表
                         unset($arr);
 			$command = "ls ".$local_path." | grep ".$lv." | grep ".$sql_file_format ;
-			echo "command : ".$command."\n";
+			//echo "command : ".$command."\n";
                         exec( $command, $arr );
                         //print_r( $arr ) ; exit ;
 
@@ -39,9 +39,9 @@ echo "********** DataBase Auto Import Start **********\n" ;
                                         $file_path = $local_path."/".$av ;
                                         //echo "file_path : ".$file_path."\n";
                                         $command = "mysql -u ".$db_account." -p'".$db_password."' < ".$file_path ;
-                                        echo "command : ".$command."\n" ;
-                                        //echo "mysqldump[".$ak."]\t:\t".$av."\t is ok !\n" ;
-                                        //system( $command ) ;
+                                        //echo "command : ".$command."\n" ;
+                                        echo "mysqldump[".$ak."]\t:\t".$av."\t is ok !\n" ;
+                                        system( $command ) ;
                                 }
                         }
                 }
