@@ -1,8 +1,8 @@
 #!/usr/bin/php
 <?php
 
-        $db_account     = "root" ;
-        $db_password    = "see321" ;
+        $db_account     = "" ;
+        $db_password    = "" ;
         $db_name_list   = array(
                                 "laravel_"
                                 );
