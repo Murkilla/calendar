@@ -9,14 +9,14 @@ use DB;
 class Event extends Model
 {
     use HasFactory;
-    protected $table = 'calendar';
+    protected $table = 'laravel_calendar';
 
     public function select($arr){
         $query = "
                     SELECT
                         id,title,start,end
                     FROM
-                        calendar
+                        laravel_calendar
                     WHERE
                         start >= '".$arr['start']."'
                         AND end <= '".$arr['end']."'
@@ -27,14 +27,14 @@ class Event extends Model
     }
 
     public function cus_insert($arr){
-        $res = DB::insert('insert into calendar (title, start, end, switch) values (?, ?, ?, ?)', [$arr['title'], $arr['start'], $arr['end'],'Y']);
+        $res = DB::insert('insert into laravel_calendar (title, start, end, switch) values (?, ?, ?, ?)', [$arr['title'], $arr['start'], $arr['end'],'Y']);
         return $res;
     }
 
     public function cus_update($arr){
         $query = "
                     UPDATE
-                        calendar
+                        laravel_calendar
                     SET
                         title = '".$arr['title']."',
                         start = '".$arr['start']."',
@@ -50,7 +50,7 @@ class Event extends Model
     public function cus_delete($arr){
         $query = "
                     UPDATE
-                        calendar
+                        laravel_calendar
                     SET
                         switch = 'N'
                     WHERE
