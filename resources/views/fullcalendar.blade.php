@@ -52,7 +52,8 @@
                             type: "POST",
                             success: function (data) {
                                 console.log(data);
-                                displayMessage("Added Successfully");
+                                alert("Added Successfully");
+                                location.reload(true);
                             },
                             error: function(err){
                                 console.log(err);
@@ -80,7 +81,8 @@
                         type: "POST",
                         success: function (response) {
                             console.log(response);
-                            displayMessage("Updated Successfully");
+                            alert("Updated Successfully");
+                            location.reload(true);
                         },
                         error: function(err){
                                 console.log(err);
@@ -97,7 +99,8 @@
                             success: function (response) {
                                 if(parseInt(response) > 0) {
                                     $('#calendar').fullCalendar('removeEvents', event.id);
-                                    displayMessage("Deleted Successfully");
+                                    alert("Deleted Successfully");
+                                    location.reload(true);
                                 }
                             }
                         });
