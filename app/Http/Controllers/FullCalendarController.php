@@ -18,7 +18,7 @@ class FullCalendarController extends Controller
             $selectArr = [ 'start' => $start,
                             'end' => $end
                         ];
-            $data = Event::select($selectArr);
+            $data = Event::cus_select($selectArr);
             return Response::json($data);
         }
         return view('fullcalendar');

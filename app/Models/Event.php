@@ -11,7 +11,7 @@ class Event extends Model
     use HasFactory;
     protected $table = 'laravel_calendar';
 
-    public function select($arr){
+    public function cus_select($arr){
         $query = "
                     SELECT
                         id,title,start,end
